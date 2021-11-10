@@ -1,21 +1,125 @@
 html,
-body {
-  padding: 0;
+.produkty
+{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+* {
   margin: 0;
+  padding: 0;
+  font-family: 'Poppids',sans-serif;
+}
+body 
+{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 100vh;
+  background: #ffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-.produkty
+.card
 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  position:relative;
+  width: 320px;
+  height: 420px;
+  background: #122936;
+  overflow: hidden;
+  border-radius:20px;
+}
+.card::before
+{
+  content: '';
+  position: absolute;
+  top:-50%;
+  width: 100%;
+  height: 100%;
+  background: #2196f3;
+  transform:skewy(345deg);
+  transition:0.5s;
+}
+.card:hover:before
+{
+  top: -70%;
+  transform:skewy(390deg);
+}
+.card::after
+{
+  content:'Istore';
+  position:absolute;
+  bottom:0;
+  left: 0;
+  font-weight: 600;
+  font-size:8em;
+  color: rgba(0, 0, 0, 0);
+}
+.card .imgBx
+{
+  position:relative;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+.card .imgBx img
+{
+  max-width: 100%;
+  transition:0.5s
+}
+.card:hover .imgBx img
+{
+  max-width: 50%;
+
+}
+.card .contentBx
+{
+position:relative;
+padding: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+z-index: 1;
+}
+.card .contentBx .name
+{
+  font-size: 25px;
+  color:#fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.card .contentBx .price
+{
+  font-size: 23px;
+  color:black;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.card .contentBx .buy
+{
+ position: relative;
+ top: 200px;
+ opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color:#ffff;
+  text-decoration: none;
+  background: #212121;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+.card:hover .contentBx .buy
+{
+  top: 0;
+  opacity: 1;
 }
