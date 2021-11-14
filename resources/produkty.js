@@ -4,8 +4,6 @@ module.exports = [
         nazev: "iPhone X",
         popis: "Lepší než android",
         cena: 50000,
-
-
     },
     {
         id: 2,
@@ -101,7 +99,7 @@ module.exports = [
         id: 17,
         nazev: "iPhone 7s",
         popis: "kvalitní iPhone 7s",
-        cena: 67000
+        cena: 67000,
     },
     {
         id: 18,
