@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="produkty container">{produkty.map(produkt => <Produkt produkt={produkt} />)}</div>
+      <div className="produkty container">{produkty.map((produkt, i) => <Produkt produkt={produkt} key={i} />)}</div>
 
 
 
