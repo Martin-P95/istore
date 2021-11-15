@@ -11,7 +11,7 @@ module.exports = [
         nazev: "iPhone XS",
         popis: "Dvakrát lepší",
         cena: 60000,
-        obrazek: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-family-hero?wid=470&hei=556&fmt=png-alpha&.v=1631220221000",
+        obrazek: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-services-tv-2up-geoalt-202104?wid=240&hei=173&fmt=png-alpha&.v=1631745118000",
     },
     {
         id: 3,

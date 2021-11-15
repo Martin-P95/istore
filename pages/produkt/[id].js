@@ -1,13 +1,16 @@
 import React from "react";
 import produkty from "../../resources/produkty";
+import logo from "../../public/iStoreLogo.svg";
 
 export default function Produkt({ produkt }) {
     return (
         <div >
             {produkt !== null ? (
                 <div className="cele" >
-
-
+                    <h1>{produkt.nazev}</h1>
+                    <h2>{produkt.cena} kč</h2>
+                    <img src={produkt.obrazek} alt="" />
+                    <img src={logo} alt="" />
 
 
 
