@@ -1,16 +1,14 @@
 import React from "react";
-import { useRouter } from "next/router";
 import produkty from "../../resources/produkty";
-import { useEffect, useState } from "react";
 
-export default function Produkt() {
-    const [produkt, setProdukt] = useState(null);
-    const router = useRouter();
-    const { id } = router.query;
-    useEffect(() => {
-        if (id !== undefined) {
-            setProdukt(produkty.find((item) => item.id === +id));
-        }
-    }, [id]);
-    return <div>{produkt !== undefined && produkt !== null ? <h1>{produkt.nazev}</h1> : "Načítání"}</div>;
+export default function Produkt({ produkt }) {
+    return <div>{produkt !== null ? <h1>{produkt.nazev}</h1> : <h1>Produkt nenalezen</h1>}</div>;
+}
+
+export async function getServerSideProps(context) {
+    const { id } = context.params;
+    const produkt = produkty.find((item) => item.id === +id);
+    return {
+        props: { produkt: produkt !== undefined ? produkt : null },
+    };
 }
