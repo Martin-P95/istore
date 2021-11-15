@@ -2,7 +2,11 @@ import React from "react";
 import produkty from "../../resources/produkty";
 
 export default function Produkt({ produkt }) {
-    return <div>{produkt !== null ? <h1>{produkt.nazev}</h1> : <h1>Produkt nenalezen</h1>}</div>;
+    return <div className="container">{produkt !== null ? <h1>{produkt.nazev}</h1> : <h1>Produkt nenalezen</h1>}
+
+
+    </div>
+
 }
 
 export async function getServerSideProps(context) {
