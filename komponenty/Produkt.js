@@ -11,7 +11,7 @@ export default function Produkt({ produkt }) {
                 <div class="contentBx">
                     <h3 class="name">{nazev}</h3>
                     <h2 class="price">{cena}<small>kč</small></h2>
-                    <a href="#" class="buy">Koupit</a>
+                    <a href={`/produkt/${id}`} class="buy">Koupit</a>
                 </div>
             </div>
         </div>

@@ -1,17 +1,16 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import produkty from '../../resources/produkty';
-
+import React from "react";
+import { useRouter } from "next/router";
+import produkty from "../../resources/produkty";
+import { useEffect, useState } from "react";
 
 export default function Produkt() {
-    const router = useRouter()
-    const { id } = router.query
-    produkty.map(item => console.log(item.id))
-    let produkt = produkty.filter(item => { return parseInt(item.id) === parseInt(id) })
-    return (
-        <div>
-            <h1>{produkt[0].nazev}</h1>
-
-        </div>
-    )
+    const [produkt, setProdukt] = useState(null);
+    const router = useRouter();
+    const { id } = router.query;
+    useEffect(() => {
+        if (id !== undefined) {
+            setProdukt(produkty.find((item) => item.id === +id));
+        }
+    }, [id]);
+    return <div>{produkt !== undefined && produkt !== null ? <h1>{produkt.nazev}</h1> : "Načítání"}</div>;
 }
