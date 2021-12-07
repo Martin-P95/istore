@@ -10,7 +10,7 @@ export default function Produkt({ produkt }) {
             {produkt !== null ? (
                 <>
                 <div className="stranka">
-                <img className="logo"src="/iStoreLogo.svg" alt="" />
+                
                 <div className="row">
                   
                 <div className="col-md-6">

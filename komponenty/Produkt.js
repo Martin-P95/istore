@@ -6,7 +6,7 @@ export default function Produkt({ produkt }) {
         <div>
             <div className="card">
                 <div className="imgBx">
-                    <img src={obrazek} />
+                    <img className="obrazek"src={obrazek} />
                 </div>
                 <div className="contentBx">
                     <h3 className="name">{nazev}</h3>
