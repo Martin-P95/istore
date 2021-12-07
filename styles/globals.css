@@ -1,103 +1,90 @@
 html,
-.produkty
-{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.produkty {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins',sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
-.card
-{
-  position:relative;
+.card {
+  position: relative;
   width: 220px;
   height: 320px;
   background: #122936;
   overflow: hidden;
-  border-radius:20px;
-  margin:30px;
+  border-radius: 20px;
+  margin: 30px;
 }
-.card::before
-{
-  content: '';
+.card::before {
+  content: "";
   position: absolute;
-  top:-50%;
+  top: -50%;
   width: 100%;
   height: 100%;
-  background: #8AE1FC;
-  transform:skewy(345deg);
-  transition:0.5s;
+  background: #8ae1fc;
+  transform: skewy(345deg);
+  transition: 0.5s;
 }
-.card:hover:before
-{
+.card:hover:before {
   top: -70%;
-  transform:skewy(390deg);
+  transform: skewy(390deg);
 }
-.card::after
-{
-  content:'Istore';
-  position:absolute;
-  bottom:0;
+.card::after {
+  content: "Istore";
+  position: absolute;
+  bottom: 0;
   left: 0;
   font-weight: 600;
-  font-size:8em;
+  font-size: 8em;
   color: rgba(0, 0, 0, 0);
 }
-.card .imgBx
-{
-  position:relative;
+.card .imgBx {
+  position: relative;
   width: 100%;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   align-items: center;
   padding-top: 20px;
   z-index: 1;
 }
-.card .imgBx img
-{
+.card .imgBx img {
   max-width: 80%;
-  transition:0.5s
+  transition: 0.5s;
 }
-.card:hover .imgBx img
-{
+.card:hover .imgBx img {
   max-width: 50%;
-
 }
-.card .contentBx
-{
-position:relative;
-padding: 20px;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-z-index: 1;
+.card .contentBx {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
 }
-.card .contentBx .name
-{
+.card .contentBx .name {
   font-size: 25px;
-  color:#fff;
+  color: #fff;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.card .contentBx .price
-{
+.card .contentBx .price {
   font-size: 23px;
-  color:black;
+  color: black;
   font-weight: 500;
   letter-spacing: 1px;
 }
-.card .contentBx .buy
-{
- position: relative;
- top: 200px;
- opacity: 0;
+.card .contentBx .buy {
+  position: relative;
+  top: 200px;
+  opacity: 0;
   padding: 10px 30px;
   margin-top: 15px;
   color: black;
@@ -108,13 +95,32 @@ z-index: 1;
   letter-spacing: 1px;
   transition: 0.5s;
 }
-.card:hover .contentBx .buy
-{
+.card:hover .contentBx .buy {
   top: 0;
   opacity: 1;
 }
-.cele
-{  
-   background: #1e2227;
-   color: white;
+
+* {
+  border: 1px solid red !important;
+}
+
+.stranka {
+  background-color: #1e2227;
+  display: block;
+  min-height: 100vh;
+}
+.logo {
+  height: 100px;
+  margin: 10px;
+}
+
+.row {
+  height: 100%;
+}
+.Sobrazek {
+  background-color: red;
+}
+.Sinfo {
+  background-color: blue;
+  height: 100%;
 }
