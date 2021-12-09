@@ -118,19 +118,38 @@ html,
   height: 100%;
   width: 100%;
 }
-.Sobrazek {
-  background-color: red;
-  width: 100%;
+
+.sinfo {
   height: auto;
-}
-.Sinfo {
-  background-color: blue;
-  height: 100%;
-}
-.obrazek {
   width: 100%;
+  color: white;
+  text-align: center;
 }
+
 .navbar-brand {
   width: 100px;
   height: 100%;
+}
+.tlačítko {
+  display: inline-block;
+  width: fit-content;
+  padding: 18px 50px;
+  background: #8ae1fc;
+  border: none;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  border-radius: 15px;
+}
+.nazevP {
+}
+.obrazekP {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.sobrazek {
+  width: 100%;
+  height: auto;
 }

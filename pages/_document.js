@@ -12,8 +12,8 @@ class MyDocument extends Document {
                 <Head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous"/>
                 </Head>
                 <body>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
-                <img className="navbar-brand" src="/iStoreLogo.svg" alt="" />
+                <nav className="navbar navbar-expand-lg navbar-light bg-light d-flex justify-content-between flex-column">
+                <a href="/"><img className="navbar-brand" src="/iStoreLogo.svg" alt="" /></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

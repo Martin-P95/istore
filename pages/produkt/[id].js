@@ -14,16 +14,17 @@ export default function Produkt({ produkt }) {
                 <div className="row">
                   
                 <div className="col-md-6">
-                <div className="Sinfo">
-                        <h1>{produkt.nazev}</h1>
-                        <h2>{produkt.popis}</h2>
-                        <h2>{produkt.cena} kč</h2>
+                <div className="sinfo">
+                        <h1 className="nazevP">{produkt.nazev}</h1>
+                        <h2 className="popisP">{produkt.popis}</h2>
+                        <h2 className="cenaP">{produkt.cena} kč</h2>
+                        <button className="tlačítko">Koupit</button>
                         </div>
                 </div>
                     
                 <div className="col-md-6"> 
-                <div className="Sobrazek">
-                <img src={produkt.obrazek} alt="" />
+                <div className="sobrazek">
+                <img className="obrazekP" src={produkt.obrazek} alt="" />
                 </div>    
                 </div>
                 </div>
