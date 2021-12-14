@@ -9,6 +9,17 @@ html,
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
+.navcontainer {
+  background-color: #f9fafb;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.navcontainer li {
+  margin: 30px;
+}
 
 .card {
   position: relative;
@@ -48,13 +59,12 @@ html,
   display: flex;
   justify-content: center;
   align-items: center;
-  align-items: center;
-  padding-top: 20px;
+  padding-top: 15px;
   z-index: 1;
 }
 .card .imgBx img {
-  max-width: 80%;
-  transition: 0.5s;
+  max-width: 75%;
+  transition: 0.7s;
 }
 .card:hover .imgBx img {
   max-width: 50%;
@@ -71,13 +81,12 @@ html,
 .card .contentBx .name {
   font-size: 25px;
   color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  justify-content: center;
+  align-items: center;
 }
 .card .contentBx .price {
-  font-size: 23px;
-  color: black;
+  font-size: 20px;
+  color: aliceblue;
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -105,9 +114,17 @@ html,
 }*/
 
 .stranka {
-  background-color: #1e2227;
+  background: linear-gradient(
+      42deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    url(../public/pozadí.png);
   display: block;
   min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .logo {
   height: 100px;
@@ -117,13 +134,8 @@ html,
 .row {
   height: 100%;
   width: 100%;
-}
-
-.sinfo {
-  height: auto;
-  width: 100%;
-  color: white;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar-brand {
@@ -131,25 +143,90 @@ html,
   height: 100%;
 }
 .tlačítko {
-  display: inline-block;
-  width: fit-content;
-  padding: 18px 50px;
-  background: #8ae1fc;
-  border: none;
-  font-size: 18px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.5s;
-  border-radius: 15px;
 }
-.nazevP {
-}
+
 .obrazekP {
-  display: block;
-  text-align: center;
   margin: auto;
+  width: 500px;
+  height: auto;
+  margin-top: 30px;
 }
 .sobrazek {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sinfo {
+  height: 100%;
   width: 100%;
-  height: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  margin-top: 30px;
+}
+.btext {
+  position: relative;
+  margin: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popisP {
+  width: 90%;
+  margin: 5%;
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  border: 2px solid rgb(143, 140, 140);
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+.tlačítko {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7f5a83;
+  background-image: linear-gradient(to right, blue 0%, green 74%);
+  background-size: 200% 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition: 500ms;
+}
+
+.tlačítko:before {
+  content: "Koupit";
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  transition: 500ms;
+}
+
+.tlačítko:hover {
+  background-position: right;
+}
+
+.tlačítko:hover:before {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tlačítko:focus {
+  outline: none;
 }
