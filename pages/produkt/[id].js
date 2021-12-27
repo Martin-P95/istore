@@ -21,7 +21,7 @@ export default function Produkt({ produkt }) {
                   <div className="sinfo">
                     <h1 className="nazevP">{produkt.nazev}</h1>
 
-                    <h2 className="cenaP">{produkt.cena} kč</h2>
+                    <h2 className="cenaP">Cena: {produkt.cena} kč</h2>
                     <button className="tlačítko">Koupit</button>
                   </div>
                 </div>

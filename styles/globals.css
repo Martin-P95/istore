@@ -2,7 +2,8 @@ html,
 .produkty {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+  justify-content: center;
+  }
 * {
   margin: 0;
   padding: 0;
@@ -55,7 +56,7 @@ html,
 }
 .card .imgBx {
   position: relative;
-  width: 100%;
+  width: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,6 +81,7 @@ html,
 }
 .card .contentBx .name {
   font-size: 25px;
+  height: 27px;
   color: #fff;
   justify-content: center;
   align-items: center;
@@ -154,6 +156,11 @@ html,
   justify-content: center;
   align-items: center;
 }
+.nazevP
+{
+  width: 300px;
+  padding-bottom: 30px;
+}
 
 .sinfo {
   height: 100%;
@@ -187,7 +194,7 @@ html,
 .tlačítko {
   width: 200px;
   height: 70px;
-  background: linear-gradient(to left top, #122936 40%, #c30115 60%);
+  background-color: #122936;
   border-radius: 20px;
   border-style: none;
   color: #fff;
@@ -204,12 +211,98 @@ html,
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.tlačítko:before {
-}
-
 .tlačítko:hover {
   transition: all 0.5s ease;
   transform: rotate(-3deg) scale(1.1);
   box-shadow: 0px 3px 5px;
   box-shadow: rgba(255, 255, 255, 0.15);
+}
+/*objednávka*/
+.card-page
+{
+margin: 80px;
+}
+.card-page table
+{
+width: 100%;
+border-collapse:collapse;
+}
+.card-info
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-page th
+{
+  text-align: left;
+  padding: 5px;
+  color:white;
+  background-color:#8ae1fc ;
+  font-weight: normal;
+}
+.card-page td
+{
+  padding: 10px 5px;
+}
+.card-page td input
+{
+  width: 40px;
+  height:30px ;
+  padding: 5px;
+}
+.card-page td a
+{
+  color: #8ae1fc;
+  font-size: 12px;
+}
+.card-page td img
+{
+width: 80px;
+height: 80px;
+margin-right:10px ;
+}
+.total-price
+{
+  display: flex;
+  justify-content: flex-end;
+}
+.total-price table
+{
+  border-top:3px solid #8ae1fc;
+  width: 50%;
+  
+}
+.total-price td:last-child
+{
+  text-align:right ;
+}
+.card-page th:last-child
+{
+  text-align: right;
+}
+.card-page td:last-child
+{
+  text-align: right;
+}
+.table-karta
+{
+  font-size: 20px;
+}
+
+ @media only screen and (max-width: 600px)
+{
+  .card-info p 
+  {
+    display: none;
+    background-color: red;
+  }
+  .card-page
+  {
+  margin: 0px;
+  padding: 0px;
+  }
+  .total-price table
+  {
+    width: 100%;
+  }
 }
