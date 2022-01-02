@@ -1,76 +1,104 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Cookies from "js-cookie";
 
+export default function Objednavka() {
+  const [produkty, setProdukty] = useState([]);
+  const [form, setForm] = useState({
+    jmeno: "",
+    email: "",
+    adresa: "",
+    cislo: "",
+  });
 
-export default function objednavka() {
-    return (
-        <>
-            <div className="small-container card-page">
-                <div className='table-karta'>
-                    <table>
-                        <tr>
-                            <th>Produkt</th>
-                            <th>Množství</th>
-                            <th>Cena</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="card-info">
-                                    <img src="/obrázky/iphonese.png" alt="" />
-                                    <div>
-                                        <p>Ipad pro 2020</p>
-                                        <small>cena:500kč</small>
-                                        <br />
-                                        <a href="">odebrat</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><input type="number" value="1"></input></td>
-                            <td>5000 kč</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div className="card-info">
-                                    <img src="/obrázky/mbp16.png" alt="" />
-                                    <div>
-                                        <p>Ipad pro 2020</p>
-                                        <small>cena:500kč</small>
-                                        <br />
-                                        <a href="">odebrat</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td><input type="number" value="1"></input></td>
-                            <td>5000 kč</td>
-                        </tr>
+  const changeForm = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.type === "checkbox" ? e.target.checked : e.target.value,
+    });
+  };
 
-                    </table>
-                    <div className="total-price">
-                        <table>
-                            <tr>
-                                <td>Daň</td>
-                                <td>2000kč</td>
-                            </tr>
-                            <tr>
-                                <td>Celkem</td>
-                                <td>2000kč</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div className='dotaznik'>
-                    <h3 className='dotaznikN'>Jméno Příjmení</h3>
-                    <input type="text" className='poled' />
-                    <h3 className='dotaznikN'>E-mail</h3>
-                    <input type="text" className='poled' />
-                    <h3 className='dotaznikN'>Adresa doručení</h3>
-                    <input type="text" className='poled' />
-                    <h3 className='dotaznikN'>Číslo karty</h3>
-                    <input type="text" className='poled' />
-                    <button className="tkoupit">Objednat</button>
-                </div>
+  useEffect(() => {
+    setProdukty(JSON.parse(Cookies.get("kosik") !== undefined ? Cookies.get("kosik") : false) || []);
+  }, []);
 
-            </div>
-        </>
-    )
+  const odebrat = (id) => {
+    setProdukty(produkty.filter((produkt, i) => i !== id));
+    Cookies.set("kosik", JSON.stringify(produkty.filter((produkt, i) => i !== id)));
+  };
+
+  const spocitejCenu = () => {
+    let cena = 0;
+    produkty.forEach((produkt) => (cena += produkt.cena));
+    return cena;
+  };
+
+  return (
+    <>
+      <div className="small-container card-page">
+        <div className="table-karta">
+          <table>
+            <tbody>
+              <tr>
+                <th>Produkt</th>
+                <th>Množství</th>
+                <th>Cena</th>
+              </tr>
+              {produkty.map((produkt, i) => {
+                return (
+                  <tr key={i}>
+                    <td>
+                      <div className="card-info">
+                        <img src={produkt.obrazek} alt="" />
+                        <div>
+                          <p>{produkt.nazev}</p>
+                          <small>cena:{produkt.cena}</small>
+                          <br />
+                          <span onClick={() => odebrat(i)}>odebrat</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>1</td>
+                    <td>{produkt.cena} kč</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div className="total-price">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Daň</td>
+                  <td>{spocitejCenu()}kč</td>
+                </tr>
+                <tr>
+                  <td>Celkem</td>
+                  <td>{spocitejCenu() * 1.05}kč</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="dotaznik">
+          <h3 className="dotaznikN">Jméno Příjmení</h3>
+          <input type="text" className="poled" name="jmeno" value={form.jmeno} onChange={(e) => changeForm(e)} />
+          <h3 className="dotaznikN">E-mail</h3>
+          <input type="text" className="poled" name="email" value={form.email} onChange={(e) => changeForm(e)} />
+          <h3 className="dotaznikN">Adresa doručení</h3>
+          <input type="text" className="poled" name="adresa" value={form.adresa} onChange={(e) => changeForm(e)} />
+          <h3 className="dotaznikN">Číslo karty</h3>
+          <input type="text" className="poled" name="cislo" value={form.cislo} onChange={(e) => changeForm(e)} />
+          <button
+            className="tkoupit"
+            onClick={() => {
+              window.alert(`objednal sis ${produkty[0].nazev} a jmenuješ se ${form.jmeno}`);
+            }}
+          >
+            Objednat
+          </button>
+        </div>
+      </div>
+    </>
+  );
 }

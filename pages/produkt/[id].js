@@ -2,15 +2,16 @@ import React from "react";
 import produkty from "../../resources/produkty";
 import logo from "../../public/iStoreLogo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faCartArrowDown,
-  faSearch,
-  faShoppingCart,
-  faShuttleVan,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faCartArrowDown, faSearch, faShoppingCart, faShuttleVan } from "@fortawesome/free-solid-svg-icons";
+import Cookies from "js-cookie";
 
 export default function Produkt({ produkt }) {
+  const pridatDoKosiku = () => {
+    let produkty = JSON.parse(Cookies.get("kosik") !== undefined ? Cookies.get("kosik") : false) || [];
+    produkty.push(produkt);
+    Cookies.set("kosik", JSON.stringify(produkty));
+  };
+
   return (
     <div>
       {produkt !== null ? (
@@ -21,9 +22,10 @@ export default function Produkt({ produkt }) {
                 <div className="btext">
                   <div className="sinfo">
                     <h1 className="nazevP">{produkt.nazev}</h1>
-
                     <h2 className="cenaP">Cena: {produkt.cena} kč</h2>
-                    <button className="tlačítko">Přidat <FontAwesomeIcon icon={faCartArrowDown} /></button>
+                    <button className="tlačítko" onClick={pridatDoKosiku}>
+                      Přidat <FontAwesomeIcon icon={faCartArrowDown} />
+                    </button>
                   </div>
                 </div>
               </div>
