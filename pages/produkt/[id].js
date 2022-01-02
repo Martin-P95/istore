@@ -4,6 +4,7 @@ import logo from "../../public/iStoreLogo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
+  faCartArrowDown,
   faSearch,
   faShoppingCart,
   faShuttleVan,
@@ -22,7 +23,7 @@ export default function Produkt({ produkt }) {
                     <h1 className="nazevP">{produkt.nazev}</h1>
 
                     <h2 className="cenaP">Cena: {produkt.cena} kč</h2>
-                    <button className="tlačítko">Koupit</button>
+                    <button className="tlačítko">Přidat <FontAwesomeIcon icon={faCartArrowDown} /></button>
                   </div>
                 </div>
               </div>
@@ -31,7 +32,9 @@ export default function Produkt({ produkt }) {
                   <img className="obrazekP" src={produkt.obrazek} alt="" />
                 </div>
               </div>
-              <h2 className="popisP">{produkt.popis}</h2>
+              <div className="popisC">
+                <h2 className="popisP">{produkt.popis}</h2>
+              </div>
             </div>
           </div>
         </>
