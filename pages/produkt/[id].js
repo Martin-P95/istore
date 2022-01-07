@@ -39,7 +39,11 @@ export default function Produkt({ produkt }) {
               </div>
             </div>
           </div>
+          <div className="košíkP2">
+      <a  className="košík" href="http://localhost:3000/objednavka"><FontAwesomeIcon icon={faCartArrowDown}/></a>
+      </div>
         </>
+        
       ) : (
         <h1 className="popisP">Produkt nenalezen</h1>
       )}

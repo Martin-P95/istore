@@ -126,6 +126,39 @@ html,
   opacity: 1;
 }
 
+.košík {
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.košík:hover {
+  color: #8ae1fc;
+}
+
+.košíkP {
+  position: fixed;
+  left: 2%;
+  bottom: 10%;
+  width: 65px;
+  background-color: #122936;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+.košíkP2 {
+  position: fixed;
+  left: 2%;
+  bottom: 30%;
+  width: 65px;
+  background-color: #122936;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
+
 /* {
   border: 1px solid red !important;
 }*/
@@ -217,6 +250,7 @@ html,
   border-radius: 10px;
   color: black;
   text-align: center;
+  margin-top:70px;
 }
 
 .tlačítko {
@@ -278,6 +312,7 @@ html,
   height: 30px;
   padding: 5px;
 }
+
 /**/
 .card-page td span {
   color: #8ae1fc;
@@ -321,6 +356,7 @@ html,
   flex-direction: column;
   margin-bottom: 25px;
 }
+
 .tkoupit {
   margin-top: 20px;
   width: 200px;
@@ -348,9 +384,11 @@ html,
   box-shadow: 0px 3px 5px;
   box-shadow: rgba(255, 255, 255, 0.15);
 }
+
 .dotaznikN {
   color: black;
 }
+
 .poled[type="text"] {
   width: 300px;
   height: 40px;
@@ -362,10 +400,12 @@ html,
   box-sizing: border-box;
   transition: 0.5s;
 }
+
 .poled[type="text"]:focus {
   border-color: #8ae1fc;
   box-shadow: 0 0 8px 0 #8ae1fc;
 }
+
 
 @media only screen and (max-width: 600px) {
   .card-info p {
@@ -395,6 +435,7 @@ html,
     width: 100%;
     height: 100%;
   }
+
   .dotaznik {
     justify-content: center;
     align-items: center;

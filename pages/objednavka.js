@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
+import { faCaravan, faTrash, faTrashRestoreAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Objednavka() {
   const [produkty, setProdukty] = useState([]);
@@ -41,7 +42,7 @@ export default function Objednavka() {
             <tbody>
               <tr>
                 <th>Produkt</th>
-                <th>Množství</th>
+               
                 <th>Cena</th>
               </tr>
               {produkty.map((produkt, i) => {
@@ -54,11 +55,11 @@ export default function Objednavka() {
                           <p>{produkt.nazev}</p>
                           <small>cena:{produkt.cena}</small>
                           <br />
-                          <span onClick={() => odebrat(i)}>odebrat</span>
+                          <span onClick={() => odebrat(i)}><FontAwesomeIcon icon={faTrash}/></span>
                         </div>
                       </div>
                     </td>
-                    <td>1</td>
+                    
                     <td>{produkt.cena} kč</td>
                   </tr>
                 );
@@ -70,7 +71,7 @@ export default function Objednavka() {
               <tbody>
                 <tr>
                   <td>Daň</td>
-                  <td>{spocitejCenu()}kč</td>
+                  <td>{spocitejCenu() * 1.05-spocitejCenu()}kč</td>
                 </tr>
                 <tr>
                   <td>Celkem</td>
@@ -92,7 +93,13 @@ export default function Objednavka() {
           <button
             className="tkoupit"
             onClick={() => {
-              window.alert(`objednal sis ${produkty[0].nazev} a jmenuješ se ${form.jmeno}`);
+              window.alert(`
+              Zákazník: ${form.jmeno}
+              E-mail: ${form.email}
+              Objednal si: ${produkty[0].nazev}
+              Na adresu: ${form.adresa}
+              Platební udeje:${form.cislo}`)
+              
             }}
           >
             Objednat

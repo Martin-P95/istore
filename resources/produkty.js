@@ -167,7 +167,7 @@ module.exports = [
     nazev: "iPad",
     popis: "Tablet - displej 10,2 QHD 2160 × 1620 Retina, Apple A13 Bionic, interní paměť 64 GB, Wi-Fi, Bluetooth, webkamera 12 Mpx + 12 Mpx, výdrž baterie až 10 h, hmotnost 490g, Lightning, iPadOS",
     cena: 9990,
-    obrazek: "obrázky/ipad.png",
+    obrazek: "/obrázky/ipad.png",
     category: "ipad",
   },
   {

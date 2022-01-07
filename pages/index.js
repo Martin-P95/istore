@@ -3,6 +3,8 @@ import Image from "next/image";
 import produkty from "../resources/produkty";
 import Produkt from "../komponenty/Produkt";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAd, faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [category, setCategory] = useState("");
@@ -30,6 +32,10 @@ export default function Home() {
             )
         )}
       </div>
+      <div className="košíkP">
+      <a  className="košík" href="http://localhost:3000/objednavka"><FontAwesomeIcon icon={faCartArrowDown}/></a>
+      </div>
     </>
   );
 }
+
