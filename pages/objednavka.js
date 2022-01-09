@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Cookies from "js-cookie";
 import { faCaravan, faTrash, faTrashRestoreAlt } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 export default function Objednavka() {
   const [produkty, setProdukty] = useState([]);
@@ -42,7 +43,7 @@ export default function Objednavka() {
             <tbody>
               <tr>
                 <th>Produkt</th>
-               
+
                 <th>Cena</th>
               </tr>
               {produkty.map((produkt, i) => {
@@ -55,11 +56,11 @@ export default function Objednavka() {
                           <p>{produkt.nazev}</p>
                           <small>cena:{produkt.cena}</small>
                           <br />
-                          <span onClick={() => odebrat(i)}><FontAwesomeIcon icon={faTrash}/></span>
+                          <span onClick={() => odebrat(i)}><FontAwesomeIcon icon={faTrash} /></span>
                         </div>
                       </div>
                     </td>
-                    
+
                     <td>{produkt.cena} kč</td>
                   </tr>
                 );
@@ -71,7 +72,7 @@ export default function Objednavka() {
               <tbody>
                 <tr>
                   <td>Daň</td>
-                  <td>{spocitejCenu() * 1.05-spocitejCenu()}kč</td>
+                  <td>{spocitejCenu() * 1.05 - spocitejCenu()}kč</td>
                 </tr>
                 <tr>
                   <td>Celkem</td>
@@ -81,29 +82,38 @@ export default function Objednavka() {
             </table>
           </div>
         </div>
-        <div className="dotaznik">
-          <h3 className="dotaznikN">Jméno Příjmení</h3>
-          <input type="text" className="poled" name="jmeno" value={form.jmeno} onChange={(e) => changeForm(e)} />
-          <h3 className="dotaznikN">E-mail</h3>
-          <input type="text" className="poled" name="email" value={form.email} onChange={(e) => changeForm(e)} />
-          <h3 className="dotaznikN">Adresa doručení</h3>
-          <input type="text" className="poled" name="adresa" value={form.adresa} onChange={(e) => changeForm(e)} />
-          <h3 className="dotaznikN">Číslo karty</h3>
-          <input type="text" className="poled" name="cislo" value={form.cislo} onChange={(e) => changeForm(e)} />
-          <button
-            className="tkoupit"
-            onClick={() => {
-              window.alert(`
+        <div className="objednavkaF">
+          <div className="dotaznik">
+            <h3 className="dotaznikN">Jméno Příjmení</h3>
+            <input type="text" className="poled" name="jmeno" value={form.jmeno} onChange={(e) => changeForm(e)} />
+            <h3 className="dotaznikN">E-mail</h3>
+            <input type="text" className="poled" name="email" value={form.email} onChange={(e) => changeForm(e)} />
+            <h3 className="dotaznikN">Adresa doručení</h3>
+            <input type="text" className="poled" name="adresa" value={form.adresa} onChange={(e) => changeForm(e)} />
+            <h3 className="dotaznikN">Číslo karty</h3>
+            <input type="text" className="poled" name="cislo" value={form.cislo} onChange={(e) => changeForm(e)} />
+            <h3 className="dotaznikNC">Datum expirace karty</h3>
+            <input type="text" className="poled" name="datume" value={form.datum} onChange={(e) => changeForm(e)} />
+            <h3 className="dotaznikN">CVV</h3>
+            <input type="text" className="cvvp" name="cvv" value={form.cvv} onChange={(e) => changeForm(e)} />
+            <button
+              className="tkoupit"
+              onClick={() => {
+                window.alert(`
               Zákazník: ${form.jmeno}
               E-mail: ${form.email}
               Objednal si: ${produkty[0].nazev}
               Na adresu: ${form.adresa}
-              Platební udeje:${form.cislo}`)
-              
-            }}
-          >
-            Objednat
-          </button>
+              Platební udeje:${form.cislo} Datup expirace:${form.datume} CVV:${form.cvv}`)
+              }}
+            >
+              Objednat
+            </button>
+            <div className="thx">
+            <img className="logothx" src="/iStorelogo.svg"></img>
+            <h2>Děkujeme za nákup</h2>
+            </div>
+          </div>
         </div>
       </div>
     </>

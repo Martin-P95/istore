@@ -384,11 +384,34 @@ html,
   box-shadow: 0px 3px 5px;
   box-shadow: rgba(255, 255, 255, 0.15);
 }
-
+.dotaznik
+{
+  width: auto;
+}
 .dotaznikN {
   color: black;
 }
-
+.onjednavkaF
+{
+  display: flex;
+  flex-direction:column;
+}
+.cvvp[type="text"]
+{
+  width: 50px;
+  height: 40px;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.cvvp[type="text"]:focus {
+  border-color: #8ae1fc;
+  box-shadow: 0 0 8px 0 #8ae1fc;
+}
 .poled[type="text"] {
   width: 300px;
   height: 40px;
@@ -405,7 +428,22 @@ html,
   border-color: #8ae1fc;
   box-shadow: 0 0 8px 0 #8ae1fc;
 }
-
+.logothx
+{
+  width: 200px;
+}
+.thx
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #8ae1fc;
+}
+.thx h2
+{
+  font-weight: bold;
+}
 
 @media only screen and (max-width: 600px) {
   .card-info p {
@@ -439,5 +477,9 @@ html,
   .dotaznik {
     justify-content: center;
     align-items: center;
+  }
+  .thx
+  {
+    display: none;
   }
 }
