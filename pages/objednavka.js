@@ -56,7 +56,9 @@ export default function Objednavka() {
                           <p>{produkt.nazev}</p>
                           <small>cena:{produkt.cena}</small>
                           <br />
-                          <span onClick={() => odebrat(i)}><FontAwesomeIcon icon={faTrash} /></span>
+                          <span onClick={() => odebrat(i)}>
+                            <FontAwesomeIcon icon={faTrash} />
+                          </span>
                         </div>
                       </div>
                     </td>
@@ -82,8 +84,8 @@ export default function Objednavka() {
             </table>
           </div>
         </div>
-        <div className="objednavkaF">
-          <div className="dotaznik">
+        <div className="objednavkaF d-flex row justify-content-between">
+          <div className="dotaznik col-md-2">
             <h3 className="dotaznikN">Jméno Příjmení</h3>
             <input type="text" className="poled" name="jmeno" value={form.jmeno} onChange={(e) => changeForm(e)} />
             <h3 className="dotaznikN">E-mail</h3>
@@ -104,15 +106,15 @@ export default function Objednavka() {
               E-mail: ${form.email}
               Objednal si: ${produkty[0].nazev}
               Na adresu: ${form.adresa}
-              Platební udeje:${form.cislo} Datup expirace:${form.datume} CVV:${form.cvv}`)
+              Platební udeje:${form.cislo} Datup expirace:${form.datume} CVV:${form.cvv}`);
               }}
             >
               Objednat
             </button>
-            <div className="thx">
-            <img className="logothx" src="/iStorelogo.svg"></img>
+          </div>
+          <div className="thx col-md-2">
+            <img className="logothx" src="/iStorelogo.svg" alt="Logo"></img>
             <h2>Děkujeme za nákup</h2>
-            </div>
           </div>
         </div>
       </div>
